@@ -1,0 +1,119 @@
+---
+title: "Assignment_D12_Fauzan_DS9"
+author: "Fauzan"
+date: "1/23/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Import Libraries
+
+```{r}
+install.packages("ggsci")
+install.packages("ggpubr")
+
+library(tidyverse)
+library(ggplot2)
+library(ggsci)
+library(ggpubr)
+
+```
+
+Import Dataset
+
+```{r}
+ames = read.csv("train.csv")
+```
+
+```{r}
+glimpse(ames)
+```
+
+Gain & visualize 4 insights from the Ames housing dataset
+
+1. Count of one categorical feature
+```{r}
+#count how much house sale based on overall condition of house
+ames %>%
+  count(OverallQual) %>%
+  ggplot(aes(x = reorder(OverallQual, n), y = n,fill=(OverallQual))) +
+  geom_bar(stat = 'identity') +
+  coord_flip()+
+  labs(title = 'Dominant of Overall Quality house sale in Ames, IOWA',
+       subtitle = 'Overall Quality house sale in Ames dominant from average to good rating quality',
+       caption = 'note: 1= very poor, 2= poor, 3= fair, 4= below average, 5= average, 6=above average, 7= good, 8= very good, 9=excellent, 10= very excellent',
+       x='Overall Condition (rating)',
+       y='Quantity')+
+  theme_minimal()+
+  geom_text(mapping = aes(label=n))
+
+#count how much house sale based on location house
+ames %>%
+  count(Neighborhood) %>%
+  ggplot(aes(x = reorder(Neighborhood, n), y = n,fill=(Neighborhood))) +
+  geom_bar(stat = 'identity') +
+  coord_flip()+
+  labs(title = 'Home sale based on location in Ames, IOWA',
+       subtitle = 'House sale dominant locations within Ames: North Ames, College Creek, Old Town, Edwards.',
+       x='Physical Location (Neighborhood)',
+       y='Quantity of house sale')+
+  theme_minimal()+
+  geom_text(mapping = aes(label=n,Neighborhood))
+
+```
+
+
+2. Distribution of one Numeric feature
+```{r}
+ames %>%
+  ggplot(aes(x = MSSubClass))+
+  geom_histogram(aes(fill = factor(YrSold)), alpha = 0.8)+
+  theme_pubclean()+
+  scale_fill_jco()+
+  labs(title = 'Identifies the type of dwelling involved in the sale',
+       subtitle = 'most type of house sale in Ames dominant from type 20 to 80',
+       x='Identifies the type of house',
+       y='Quantity')
+```
+
+3. Categorical-Numeric
+```{r}
+ggplot(ames, aes(x=SalePrice, y=Neighborhood,fill=Neighborhood)) + 
+    geom_boxplot(alpha=1.0) +
+    theme(legend.position="none") +
+    scale_fill_futurama()+
+    labs(title = 'Clustering sale price house by neighborhood within Ames, IOWA',
+       subtitle = 'Some neighborhood (eg:Northridge Heights, Stone Brook, and Northridge) have above the median among others and the expensive house in Ames, located in Northridge.',
+       x='Sale Price of house',
+       y='Neighborhood')
+```
+
+4. Numeric-Numeric
+```{r}
+#trends house style in year
+ggplot(ames, aes(x=OverallQual, y=OverallCond, color=HouseStyle)) +
+  geom_point() + # Show dots
+  scale_fill_startrek()+
+  facet_wrap(~YrSold)+
+  theme_pubr()+
+  labs(title = 'Home style trends sold by year within Ames, IOWA',
+       subtitle = 'In 2009 - 2010, trends house style sold dominant by one story and two story, with good condition - excellent.',
+       x='Soverall material and finish of the house',
+       y='overall condition of the house')
+  
+#relationship buyers choose based garage capacity in month
+ggplot(ames, aes(x=GarageCars, y=GarageArea, color=GarageCars)) +
+  geom_point() + # Show dots
+  scale_fill_startrek()+
+  facet_wrap(~MoSold)+
+  theme_pubr()+
+  labs(title = 'Garage capacity trends sold by month within Ames, IOWA',
+       subtitle = 'Purchases house in may - June, many buyers choose a house that has 1 - 3 garage capacity',
+       x='Size of garage in car capacity',
+       y='Size of garage in square feet')
+  
+```
+
