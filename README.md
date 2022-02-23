@@ -6,11 +6,10 @@
       1. penjualan rumah berdasarkan lokasi neighborhood,
       2. Dominan kuallitas keseluruhan dari rumah yang ingin dijual,
       3. Mengetahui kluster harga rumah yang dijual, apakah ada harga jual rumah yang jauh melebihi atau tudak,
-      4. mengetahui tipe rumah yang terjual di tiap tahunnya, dan
-      5. mengetahui kapasitas garasi setiap rumahnya yang terjual setiap tahunya. 
+      4. mengetahui tipe rumah yang terjual di tiap tahunnya
       
 #### Dalam analisis ini saya menggunakan
-     1. gambar visualisasi analisis saja
+     1. Hanya gambar visualisasi analisis 
      
 #### Harapan dari hasil analisis visualisasi ini 
      1. Dapat membantu agen penjualan rumah tipe rumah apa saja yang kebanyakan dibeli, dalam tahunan
@@ -153,12 +152,6 @@
     disusul dengan rumah yang memiliki 2 lantai. 
     nilai dari kondisi keseluruhan rumah yang terjual kebanyakan dari rentang nilai 5 keatas. 
 
-#  4. Mengetahui kapasitas garasi setiap rumahnya yang terjual setiap tahunya. 
-#### 
-    pada analisis kali ini saya menggunakan Garagecars & garagearea penjualan dari data itu. 
-    dengan mendapatkan hasil seperti ini.
-![garage](https://user-images.githubusercontent.com/92445676/155243572-0a5f1cf3-cd24-49eb-9882-1974f5a392c2.png)
-    berdasarkan hasil analisis diatas, dalam setiap bulan, banyak pembeli rumah menginginkan dengan garasi dengan kapasitas 1 hingga 3 mobil. dengan nilai yang memiliki korelasi positif antara luas garasi dengan kapasitas mobil pada garasi tersebut. 
 
 
 
