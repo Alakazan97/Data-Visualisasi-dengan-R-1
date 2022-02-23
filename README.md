@@ -115,11 +115,52 @@
         library(ggpubr)
      3. hasil code, saya lampirkan disini. 
      
-#  1. penjualan rumah berdasarkan lokasi neighborhood
+#  1. Penjualan rumah berdasarkan lokasi neighborhood & kualitas keseluruhan rumah yang terjual. 
 #### 
     pada analisis kali ini saya menggunakan variabel, neighborhood dan banyaknya penjualan dari data itu. 
     dengan mendapatkan hasil seperti ini.
-    ![image](https://user-images.githubusercontent.com/92445676/155239874-09583494-66e4-48f1-ac00-6a166a01988e.png)
+
+![home sale based location](https://user-images.githubusercontent.com/92445676/155240351-9947a73d-9ed9-446f-944c-a017a5197655.png)
+    Berdasarkan hasil analisis visualisasi penjualan rumah berdasarkan lokasi, kita dapatkan 4 tempat terbanyak yaitu:
+    North Ames dengan 225 rumah terjual
+    Collage Creek dengan 150 rumah terjual
+    Old Town dengan 113 rumah terjual
+    dan, Edwards 100 rumah terjual.
+    sisa lokasi menempati penjualan rumah dengan nilai dibawah 100 rumah dilain lokasi yang tadi disebutkan. 
+
+![oqual h](https://user-images.githubusercontent.com/92445676/155240876-ea0d7505-e357-4ac4-993d-41180b54b1ec.png)
+    berdasarkan hasil Analisis visualisasi itu, bahwa rumah yang terjual memiliki nilai kualitas keseluruhannya:
+    nilai rumah dengan angka 5 menunjukan rumah tersebut memiliki kualitas rata-rata dengan banyak 395 rumah.
+    nilai rumah dengan angka 6 menunjukan rumah tersebut memiliki kualitas diatas rata-rata dengan banyak 374 rumah. 
+    nilai rumah dengan angka 7 menunjukan rumah tersebut memiliki kualitas baik dengan banyak 319 rumah. 
+    
+ #  2. Kluster harga rumah setiap Neighborhood di Ames. 
+#### 
+    pada analisis kali ini saya menggunakan variabel, neighborhood dan saleprice penjualan dari data itu. 
+    dengan mendapatkan hasil seperti ini.
+![cluster](https://user-images.githubusercontent.com/92445676/155241938-04921dc6-1f53-464d-af51-6a709a115d3e.png)
+    berdasarkan hasil analisis diatas, kisaran harga rumah yang dijual di Ames memiliki rentah harga $180000-$400000. 
+    Adapula neighborhood yang memliliki harga rumah lebih mahal, yaitu pada lokasi Northridge Heights, Stone Brook, dan Northridge.
+    dan rumah dengan harga tertinggi ada di lokasi Northridge.
+    
+#  3. Mengetahui tipe rumah yang terjual di tiap tahunnya 
+#### 
+    pada analisis kali ini saya menggunakan variabel, OverallQual, OverallCond, dan housestyle penjualan dari data itu. 
+    dengan mendapatkan hasil seperti ini.
+![housetype](https://user-images.githubusercontent.com/92445676/155243430-d67d55ca-2128-4104-a845-caff182f58ce.png)
+    berdasarkan hasil analisis diatas, trend kebanyakan rumah yang terjual mememiliki style rumah dengan 1 lantai atau 2 lantai. 
+    dominasi yang kuat terjadi dari tahun 2006 hingga 2010 dengan mayoritas penjualan rumah dengan 1 lantai.  
+    disusul dengan rumah yang memiliki 2 lantai. 
+    nilai dari kondisi keseluruhan rumah yang terjual kebanyakan dari rentang nilai 5 keatas. 
+
+#  4. Mengetahui kapasitas garasi setiap rumahnya yang terjual setiap tahunya. 
+#### 
+    pada analisis kali ini saya menggunakan Garagecars & garagearea penjualan dari data itu. 
+    dengan mendapatkan hasil seperti ini.
+![garage](https://user-images.githubusercontent.com/92445676/155243572-0a5f1cf3-cd24-49eb-9882-1974f5a392c2.png)
+    berdasarkan hasil analisis diatas, dalam setiap bulan, banyak pembeli rumah menginginkan dengan garasi dengan kapasitas 1 hingga 3 mobil. dengan nilai yang memiliki korelasi positif antara luas garasi dengan kapasitas mobil pada garasi tersebut. 
+
+
 
 
 
